@@ -1,0 +1,49 @@
+//(c) 2018 - 2028, Nitrous Development Pty Ltd (whooshka.me)
+// Licensed under CC-BY-SA v.4 (Creative Commons, Attribution, Share Alike)
+
+
+
+{
+  "collectionID": " ",  //collection id 
+  "typeDescription": "parking_restriction_data",
+  "UID": "alphanumericUID",
+  "councilID": "@melbourne",
+  "geometryType": "point/linestring",
+  "coordinates": "[lat, long]",
+  "numberOfProfiles": "[2, 3,4...]",
+  //one or more parking restriction "profiles" that apply to the street parking bay/ collection of bays  
+  "profile1": {
+    "profileDescription": "[parking/ disabled parking/ no stopping/ clearway / loading zone]",
+    "startTime": "[08:00]", //24H Format
+    "endTime": "[16:00]", // 24H Format
+    "costPerHour": "[480]in cents",
+    "maxDuration": "[60] in mins",
+    "disabilityFactor": "[1x, 2x...]",  //if people with disability permits can stay longer than the signed duration
+    "metered": true,
+    "monday": true,
+    "tuesday": true,
+    "wednesday": true,
+    "thursday": true,
+    "friday": true,
+    "saturday": false,
+    "sunday": false,
+    "applyOnPH": false
+  },
+  "profile2": {
+    "profileDescription": "[parking/ disabled parking/ no stopping/ clearway / loading zone]",
+    "startTime": "[08:00]",
+    "endTime": "[16:00]",
+    "costPerHour": "[480]",
+    "maxDuration": "[60]",
+    "disabilityFactor": "[1x, 2x...]",
+    "metered": false,
+    "monday": false,
+    "tuesday": false,
+    "wednesday": false,
+    "thursday": false,
+    "friday": false,
+    "saturday": true,
+    "sunday": true,
+    "applyOnPH": true
+  }
+}
