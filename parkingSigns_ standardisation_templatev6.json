@@ -1,49 +1,50 @@
 //(c) 2018 - 2028, Nitrous Development Pty Ltd (whooshka.me)
 // Licensed under CC-BY-SA v.4 (Creative Commons, Attribution, Share Alike)
 
-
-
 {
-  "collectionID": " ",  //collection id 
-  "typeDescription": "parking_restriction_data",
-  "UID": "alphanumericUID",
-  "councilID": "@melbourne",
-  "geometryType": "point/linestring",
-  "coordinates": "[lat, long]",
-  "numberOfProfiles": "[2, 3,4...]",
-  //one or more parking restriction "profiles" that apply to the street parking bay/ collection of bays  
-  "profile1": {
-    "profileDescription": "[parking/ disabled parking/ no stopping/ clearway / loading zone]",
-    "startTime": "[08:00]", //24H Format
-    "endTime": "[16:00]", // 24H Format
-    "costPerHour": "[480]in cents",
-    "maxDuration": "[60] in mins",
-    "disabilityFactor": "[1x, 2x...]",  //if people with disability permits can stay longer than the signed duration
-    "metered": true,
-    "monday": true,
-    "tuesday": true,
-    "wednesday": true,
-    "thursday": true,
-    "friday": true,
-    "saturday": false,
-    "sunday": false,
-    "applyOnPH": false
-  },
-  "profile2": {
-    "profileDescription": "[parking/ disabled parking/ no stopping/ clearway / loading zone]",
-    "startTime": "[08:00]",
-    "endTime": "[16:00]",
-    "costPerHour": "[480]",
-    "maxDuration": "[60]",
-    "disabilityFactor": "[1x, 2x...]",
-    "metered": false,
-    "monday": false,
-    "tuesday": false,
-    "wednesday": false,
-    "thursday": false,
-    "friday": false,
-    "saturday": true,
-    "sunday": true,
-    "applyOnPH": true
-  }
+	"collectionId": "",  // UUID v4 Identifier of parking restriction set.
+	"restrictionId": "", // UUID v4 Individual restriction identifier.
+	"governingBodyId": "", // UUID v4 Identifier of coulcil / local governing body.
+	// One or more areas that are governed by this set of profiles.
+	"areas": [
+		/*
+		point = A single parking bay defined by a single point.
+		line = A strip of parking bays along the path defined by two or more points (unclosed).
+		area = A collection of parking bays enclosed by multiple points that are closed. At least three points are required.
+		*/
+		"type": "point",
+		// Coordinates are pairs of latitude followed by longitude only, no vertical or CRS (ISO 6709).
+		// One point is two values, two points is four, three is six etc etc...
+		"coordinates": [
+			1.2345,
+			1.2345
+		],
+	],
+	// One or more parking restriction "profiles" that apply to the parking bay/collection of bays  
+	"profiles": [
+		{
+			/*
+			Description is one of the following codes
+			P = Parking
+			DP = Disabled Parking
+			NS = No Standing
+			CW = Clearway
+			LZ = Loading Zone
+			*/
+			"description": "P",
+			"startTime": 480, // Minutes from 00:00 expressed as an integer.
+			"endTime": 960, // Minutes from 00:00 expressed as an integer.
+			"costPerHour": 4.80, // Expressed decimally in local currency.
+			"currencyCode": "AUD", // International currency code standard ISO 4217.
+			"duration": 120, // [OPTIONAL] Minutes expressed decimally. If ommited then parking is unmetered.
+			"disabilityFactor": 1.0, // [OPTIONAL] Duration factor that disabled users can park in this space for. If ommited then 1 is assumed.
+			"monday": true,
+			"tuesday": true,
+			"wednesday": true,
+			"thursday": true,
+			"friday": true,
+			"saturday": false,
+			"sunday": false,
+		}
+  ]
 }
