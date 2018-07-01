@@ -34,10 +34,10 @@
 			"description": "P",
 			"startTime": 480, // Minutes from 00:00 expressed as an integer.
 			"endTime": 960, // Minutes from 00:00 expressed as an integer.
-			"costPerHour": 4.80, // Expressed decimally in local currency.
+			"costPerHour": 4.80, // [OPTIONAL] Expressed decimally in local currency. If omitted or 0 then parking is not ticketed.
 			"currencyCode": "AUD", // International currency code standard ISO 4217.
-			"duration": 120, // [OPTIONAL] Minutes expressed decimally. If ommited then parking is unmetered.
-			"disabilityFactor": 1.0, // [OPTIONAL] Duration factor that disabled users can park in this space for. If ommited then 1 is assumed.
+			"duration": 120, // [OPTIONAL] Minutes expressed decimally. If omitted or 0 then parking is unmetered.
+			"disabilityFactor": 1.0, // [OPTIONAL] Duration factor that disabled users can park in this space for. If omitted then 1 is assumed.
 			"monday": true,
 			"tuesday": true,
 			"wednesday": true,
@@ -45,6 +45,7 @@
 			"friday": true,
 			"saturday": false,
 			"sunday": false,
+			"publicHoliday": false
 		}
   ]
 }
