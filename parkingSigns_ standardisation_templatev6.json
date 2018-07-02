@@ -17,10 +17,10 @@
   "profile1": {
     "profileDescription": "[parking/ disabled parking/ no stopping/ clearway / loading zone]",
     "startTime": "[08:00]",
-    "endTime": "[16:00]",
+    "endTime": "[16:00]",  //24 Hour format, HH:mm
     "costPerHour": "[480]",  // costs in cents or 1/100ths of the unit of currency
-    "maxDuration": "[60]",
-    "disabilityFactor": "[1x, 2x...]",
+    "maxDuration": "[60]",  // in minutes
+    "disabilityFactor": "[1x, 2x...]",  //if people with disability permits can stay longer than the signed duration
     "metered": false, //if payments are at meter/kiosk
     "ticketed": true, //if payments are by tickets displayed on dash
     "monday": true,
