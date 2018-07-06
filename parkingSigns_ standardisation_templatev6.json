@@ -5,21 +5,21 @@
 
 {
   "collectionID": " ",  //collection id type STRING
-  "typeDescription": "single parking spot / multiple spots ",
+  "typeDescription": "[single bay / strip of multiple bays/ enclosed polygon area of bays ]", // choose one of these
   "UID": "alphanumericUID",
-  "councilID": "@melbourne",  //use the email domain of the relevant local government body
-  "imageURL": "path/to/image/",
-  "geometryType": "point/linestring",
-  "coordinates": "[[lat, long]]", // array of point objects, each point being an array of two floats - lat and long (in that order)
-  "numberOfProfiles": "[2, 3,4...]",
+  "councilID": "@cityOfXYZ.com",  //use the email domain of the relevant local government body
+  "imageURL": "path/to/image/",  // path to image of parking sign if any
+  "geometryType": "point/linestring/ polygon",
+  "coordinates": "[[lat, long], [lat, long]]", // array of point objects, each point being an array of two floats - lat and long (in that order)
+  "numberOfProfiles": "[1,2, 3, 4...]",
   "isVacant": false,  //boolean, for where sensors or other technology is available for real-time data
   //one or more parking restriction "profiles" that apply to the street parking bay/ collection of bays  
   "profile1": {
-    "profileDescription": "[parking/ disabled parking/ no stopping/ clearway / loading zone]",
+    "profileDescription": "[parking/ disabled parking/ no stopping/ clearway / loading zone]",  //nature of restriction during this time span
     "startTime": "[08:00]",
     "endTime": "[16:00]",  //24 Hour format, HH:mm
     "costPerHour": "[480]",  // costs in cents or 1/100ths of the unit of currency
-    "maxDuration": "[60]",  // in minutes
+    "maxDurationInMins": "[60]",  // in minutes
     "disabilityFactor": "[1x, 2x...]",  //if people with disability permits can stay longer than the signed duration
     "metered": false, //if payments are at meter/kiosk
     "ticketed": true, //if payments are by tickets displayed on dash
