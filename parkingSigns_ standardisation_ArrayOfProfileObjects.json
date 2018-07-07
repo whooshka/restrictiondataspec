@@ -1,0 +1,69 @@
+//(c) 2018 - 2028, Nitrous Development Pty Ltd (whooshka.me)
+// Licensed under CC-BY-SA v.4 (Creative Commons, Attribution, Share Alike)
+
+
+
+{
+  "collectionID": " ",  //collection id type STRING
+  "typeDescription": "[single bay / strip of multiple bays/ enclosed polygon area of bays ]", // choose one of these
+  "UID": "alphanumericUID",
+  "councilID": "@cityOfXYZ.com",  //use the email domain of the relevant local government body
+  "imageURL": "path/to/image/",  // path to image of parking sign if any
+  "geometryType": "point/linestring/ polygon",
+  "coordinates": "[[lat, long], [lat, long]]", // array of point objects, each point being an array of two floats - lat and long (in that order)
+  "numberOfProfiles": "[1,2, 3, 4...]",
+  "isVacant": false,  //boolean, for where sensors or other technology is available for real-time data
+  //one or more parking restriction times "profiles" that apply to the street parking bay/ collection of bays  
+  "profile": [
+    {
+      "profileDescription": "[parking/ disabled parking/ no stopping/ clearway / loading zone]",  //nature of restriction during this time span
+      "startTime": "[08:00]",
+      "endTime": "[16:00]",  //24 Hour format, HH:mm
+      "costPerHour": "[480]",  // costs in cents or 1/100ths of the unit of currency
+      "maxDurationInMins": "[60]",  // in minutes
+      "disabilityFactor": "[1x, 2x...]",  //if people with disability permits can stay longer than the signed duration
+      "metered": false, //if payments are at meter/kiosk
+      "ticketed": true, //if payments are by tickets displayed on dash
+      "monday": true,
+      "tuesday": true,
+      "wednesday": true,
+      "thursday": true,
+      "friday": true,
+      "saturday": false,
+      "sunday": false,
+      "onPublicHoliday": true, // boolean, denoting applicability of restriction on local public holidays
+      //other meta data relevant to that local council. Catch-all object with custom properties.
+      "extraProperties": {   
+          "deviceID":" <...> ",
+          "meterID":" <...> ",
+          "zoneID":" <...> ",
+          "permitZoneID": " <...> ",
+          },
+    },
+    {
+      "profileDescription": "[parking/ disabled parking/ no stopping/ clearway / loading zone]",
+      "startTime": "[08:00]",
+      "endTime": "[16:00]",
+      "costPerHour": "[480]",  // costs in cents or 1/100ths of the unit of currency
+      "maxDuration": "[60]",
+      "disabilityFactor": "[1x, 2x...]",
+      "metered": false, //if payments are at meter/kiosk
+      "ticketed": true, //if payments are by tickets displayed on dash
+      "monday": false,
+      "tuesday": false,
+      "wednesday": false,
+      "thursday": false,
+      "friday": false,
+      "saturday": true,
+      "sunday": true,
+      "onPublicHoliday": true, // boolean, denoting applicability of restriction on local public holidays
+      //other meta data relevant to that local council. Catch-all object with custom properties.
+      "extraProperties": {   
+          "deviceID":" <...> ",
+          "meterID":" <...> ",
+          "zoneID":" <...> ",
+          "permitZoneID": " <...> ",
+          },
+    }
+  ]
+}
