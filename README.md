@@ -5,7 +5,7 @@ Please refer to the License.txt file for the full terms of the license, or creat
 # What it is
 This is a json based specification that expresses street-parking restrictions (as found on street parking signs) in a consistent format.  
 
-#What is in the Repo
+# What is in the Repo
 The repo has two representations of the spec, being developed in parallel. One represents parking "profiles" (see below for meaning of "profile") as objects within an object. The second represents parking "profiles" as objects in an array. In both cases each "profile" that applies to the parking bay/area is a represented as a single object.  Since the typical parking bay has multiple profiles, the collection of profiles are presented within an object or array, hence the two files in paralle.  Ideally, we settle on the one spec. 
 
 # Why it matters
